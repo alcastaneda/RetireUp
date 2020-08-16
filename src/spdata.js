@@ -1,4 +1,4 @@
-[
+const data = [
   { year: 2019, totalReturn: "31.49" },
   { year: 2018, totalReturn: "-4.38" },
   { year: 2017, totalReturn: "21.83" },
@@ -94,3 +94,5 @@
   { year: 1927, totalReturn: "37.49" },
   { year: 1926, totalReturn: "11.62" }
 ];
+
+export default data;
