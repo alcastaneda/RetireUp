@@ -4,11 +4,16 @@ import "./styles.css";
 import Table from "./Table";
 
 export default function App() {
+  const sortData = data.sort(function (a, b) {
+    return a.year - b.year;
+  });
+  const [spdata, updateSpdata] = useState(sortData);
+
   return (
     <div className="App">
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
-      <Table />
+      <Table data={spdata}/>
     </div>
   );
 }

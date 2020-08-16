@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Table({ data, min }) {
+export default function Table({ data }) {
   return (
     <table className="Table">
       <thead>
@@ -11,7 +11,12 @@ export default function Table({ data, min }) {
         </tr>
       </thead>
       <tbody>
-        
+      {data.map((row, i) => (
+          <tr key={i}>
+            <td className="">{row.year}</td>
+            <td>{row.totalReturn}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
