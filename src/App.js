@@ -24,7 +24,7 @@ export default function App() {
         max={sortData[sortData.length - 1].year}
         onChange={handle}
       />
-      <Table data={spdata} />
+      <Table data={spdata} min={spdata[0].totalReturn} />
     </div>
   );
 }
