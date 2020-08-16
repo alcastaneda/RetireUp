@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "./spdata";
 import "./styles.css";
 import Table from "./Table";
@@ -9,13 +9,22 @@ export default function App() {
     return a.year - b.year;
   });
   const [spdata, updateSpdata] = useState(sortData);
+  const handle = (vals) => {
+    const data = sortData.filter(
+      (row) => vals[0] <= row.year && row.year <= vals[1]
+    );
+    updateSpdata(data);
+  };
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      <Slider/>
-      <Table data={spdata}/>
+      <h1>S and P</h1>
+      <Slider
+        min={sortData[0].year}
+        max={sortData[sortData.length - 1].year}
+        onChange={handle}
+      />
+      <Table data={spdata} />
     </div>
   );
 }

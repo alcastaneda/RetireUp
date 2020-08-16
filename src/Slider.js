@@ -4,8 +4,8 @@ import "rc-slider/assets/index.css";
 
 const Range = Slider.createSliderWithTooltip(Slider.Range);
 
-export default () => (
+export default ({ min, max, onChange }) => (
   <>
-    <Range />
+    <Range min={min} max={max} onChange={onChange} />
   </>
 );
